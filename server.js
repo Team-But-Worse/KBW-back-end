@@ -15,7 +15,7 @@ const server = io(PORT);
 const messages = server.of('messages');
 const outGoing = new MessageQueue();
 // queue for outgoing messages
-//const recievedQueue = new MessageQueue();
+//const receivedQueue = new MessageQueue();
 
 // pickup queue
 // enqueue pickup payload to pickup queue
@@ -41,7 +41,7 @@ messages.on('connection', (socket) =>
 
   socket.on('message', (payload) =>
   {
-    console.log("MESSAGE SENT", payload);
+    console.log('MESSAGE SENT', payload);
     outGoing.add(payload.clientId, payload.body);
     socket.to(payload.clientId).emit('message', payload);
   });
@@ -59,7 +59,7 @@ messages.on('connection', (socket) =>
   socket.on('received', (payload) =>
   {
     let receipt = outGoing.read(payload.clientId, payload.body.messageId);
-    console.log("MESSAGE REMOVED", payload);
+    console.log('MESSAGE REMOVED', payload);
     socket.to(payload.clientId).emit('received', receipt);
   });
 });

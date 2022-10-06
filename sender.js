@@ -3,7 +3,7 @@
 // vendor
 
 const MessageClient = require('./lib/MessageQueue/MessageClient.js');
-// const URL = process.env.SERVER_URL || 'http://localhost';;
+// const URL = process.env.SERVER_URL || 'http://localhost';
 
 // 'Chores' is the clientId, here
 const messages = new MessageClient('Chores');
