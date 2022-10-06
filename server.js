@@ -7,6 +7,7 @@
 
 // 3. file to do the io, PORT, MessageQueue, and onGoingQueue stuff
 
+// import 'socket.io' library
 const io = require('socket.io');
 const PORT = process.env.PORT || 3002;
 const MessageQueue = require('./lib/MessageQueue/MessageQueue.js');
