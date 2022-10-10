@@ -48,6 +48,15 @@ messages.on('connection', (socket) =>
 {
 
   console.log('Socket Connected!!', socket.id);
+
+  socket.on('questions', (payload) => {
+    console.log(payload);
+    socket.broadcast.emit('questions', payload)
+  })
+  socket.on('answers', (payload) => {
+    console.log(payload)
+    messages.emit('answers', payload)
+  })
   socket.on('join', (payload) =>
   {
     console.log('Room registered', payload.clientId);
