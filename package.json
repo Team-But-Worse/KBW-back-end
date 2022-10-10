@@ -11,6 +11,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "server.js",
     "test": "jest --verbose --coverage"
   },
   "keywords": [],
