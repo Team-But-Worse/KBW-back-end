@@ -19,7 +19,7 @@ app.use(cors());
 const server = http.createServer(app);
 const socketServer = io(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://6343a6a00602f628fea36e06--kbw.netlify.app/",
     methods:["GET", "POST"]
   }
 })
