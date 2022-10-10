@@ -1,8 +1,11 @@
 'use strict';
 
-const MessageClient = require('./lib/MessageQueue/MessageClient.js');
-// const URL = process.env.SERVER_URL;
+// vendor
 
+const MessageClient = require('./lib/MessageQueue/MessageClient.js');
+// const URL = process.env.SERVER_URL || 'http://localhost';
+
+// 'Chores' is the clientId, here
 const messages = new MessageClient('Chores');
 
 messages.subscribe('received', (payload) => {
